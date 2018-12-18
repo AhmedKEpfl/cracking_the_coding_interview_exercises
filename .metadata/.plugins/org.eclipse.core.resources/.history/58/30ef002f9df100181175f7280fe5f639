@@ -1,0 +1,14 @@
+package stacks_queues;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StackSorterTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

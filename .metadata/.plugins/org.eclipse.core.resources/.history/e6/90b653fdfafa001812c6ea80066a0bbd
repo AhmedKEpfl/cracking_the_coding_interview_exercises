@@ -1,0 +1,13 @@
+package geeks_for_geeks;
+
+public class StockIncrement {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
