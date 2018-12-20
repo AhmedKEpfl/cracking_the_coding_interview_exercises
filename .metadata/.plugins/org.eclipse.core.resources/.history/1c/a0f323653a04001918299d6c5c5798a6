@@ -1,0 +1,38 @@
+package hard;
+
+public class TheMasseuse_17_16 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(theMasseuse(new int[]{ 30, 15, 60, 75, 45, 15, 15, 45}));
+	}
+	
+	public static int theMasseuse(int[] requests) {
+		int[] memo = new int[requests.length];
+		if(requests.length == 0) {
+			return 0;
+		}
+		if(requests.length == 1) {
+			return requests[0];
+		}
+		memo[0] = requests[0];
+		memo[1] = Math.max(requests[0], requests[1]);
+		return theMasseuse(requests, 2, memo);
+	}
+	
+	public static int theMasseuse(int[] array, int start, int[] memo) {
+		if(start == array.length) {
+			return memo[array.length - 1];
+		}
+		if(memo[start] >= 0) {
+			return memo[start];
+		}
+		int result = Math.max(memo[start - 1], array[start] + memo[start - 2]);
+		memo[start] = result;
+		return result;
+	}
+
+}

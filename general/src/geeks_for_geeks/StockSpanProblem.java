@@ -11,6 +11,7 @@ public class StockSpanProblem {
 	}
 	
 	public static int[] stockSpans(int[] stocks) {
+		//TODO finish
 		int[] result = new int[stocks.length];
 		result[0] = 1;
 		StockSpanStack stack = new StockSpanStack();
@@ -22,6 +23,8 @@ public class StockSpanProblem {
 				}
 			}
 		}
+		//TODO
+		return null;
 	}
 
 }

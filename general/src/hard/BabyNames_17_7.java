@@ -14,7 +14,8 @@ public class BabyNames_17_7 {
 	}
 	
 	public static Map<String, Integer> getBabyNames(Map<String, Integer> freqs, List<List<String>> pairs) {
-		
+		//TODO
+		return null;
 	}
 
 }

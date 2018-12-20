@@ -1,0 +1,60 @@
+package hard;
+
+import java.util.Set;
+
+public class ReSpace_17_13 {
+	
+	private static class ParseResult{
+		private int nbUnrecognized;
+		private String parsed;
+		public ParseResult(String parsed, int nbUnrecognized) {
+			this.parsed = parsed;
+			this.nbUnrecognized = nbUnrecognized;
+		}
+		
+		public String getParsed() {
+			return parsed;
+		}
+		
+		public int getNbUnrecognized() {
+			return nbUnrecognized;
+		}
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static String parsed(String string, Set<String> dict) {
+		ParseResult[] memo = new ParseResult[string.length()];
+		return split(string + "$", dict, memo, 0, 0).getParsed();
+	}
+	
+	public static ParseResult split(String string, Set<String> dict, ParseResult[] memo, int nbInvalid, int start) {
+		if(string.equals("$")) {
+			return new ParseResult("", nbInvalid);
+		}
+		if(memo[start] != null) {
+			return memo[start];
+		}
+		
+		ParseResult best = new ParseResult("", Integer.MAX_VALUE);
+		for(int i = start + 1; i < string.length() + 1; i++) {
+			String startString = string.substring(start, i);
+			int currNbInvalid = nbInvalid;
+			if(!dict.contains(startString)) {
+				currNbInvalid += (i - start);
+			}
+			ParseResult curr = split(string, dict, memo, currNbInvalid, i);
+			if(curr.getNbUnrecognized() < best.getNbUnrecognized()) {
+				best = new ParseResult(startString + " " + curr.getParsed(), curr.getNbUnrecognized());
+			}
+		}
+		memo[start] = best;
+		return best;
+	}
+
+}
