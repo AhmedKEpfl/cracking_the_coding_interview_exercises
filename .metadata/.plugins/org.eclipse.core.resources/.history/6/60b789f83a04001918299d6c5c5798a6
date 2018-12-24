@@ -9,7 +9,7 @@ public class TheMasseuse_17_16 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(theMasseuse(new int[]{ 75, 105, 120, 75, 90, 135 }));
+		System.out.println(theMasseuse(new int[]{ 30, 15, 60, 75, 45, 15, 15, 45}));
 	}
 	
 	public static int theMasseuse(int[] requests) {

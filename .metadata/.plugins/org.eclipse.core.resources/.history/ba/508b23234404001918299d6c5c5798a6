@@ -1,0 +1,14 @@
+package hard;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class VolumeOfHistogramsTests {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
