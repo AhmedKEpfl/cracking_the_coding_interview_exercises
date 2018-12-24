@@ -8,11 +8,12 @@ public class Pair<T> {
 		this.value2 = value2;
 	}
 	
-	public T get(int index) {
-		if(index > 1 || index < 0) {
-			throw new IndexOutOfBoundsException();
-		}
-		return index == 0 ? value1 : value2;
+	public T getValue1() {
+		return value1;
+	}
+	
+	public T getValue2() {
+		return value2;
 	}
 	
 	@Override

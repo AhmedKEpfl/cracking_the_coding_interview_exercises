@@ -30,7 +30,7 @@ public class SparseSimilarity_17_26 {
 			}
 		}
 		
-		Map<Pair<Integer>, Integer> similarities = new HashMap<Pair<Integer>, Integer>();
+		Map<Pair<Integer>, Double> similarities = new HashMap<Pair<Integer>, Double>();
 		
 		for(Entry<Integer, List<Integer>> entry: inverseList.entrySet()) {
 			List<Integer> matchingocuments = entry.getValue();
@@ -38,7 +38,7 @@ public class SparseSimilarity_17_26 {
 				for(int j = i + 1; j < matchingocuments.size(); j++) {
 					Pair<Integer> pair = new Pair<Integer>(matchingocuments.get(i), matchingocuments.get(j));
 					if(!(similarities.containsKey(pair))) {
-						similarities.put(pair, 0);
+						similarities.put(pair, 0.0);
 					}
 					
 					similarities.put(pair, similarities.get(pair) + 1);
@@ -46,18 +46,13 @@ public class SparseSimilarity_17_26 {
 			}
 		}
 		
-		Map<Pair<Integer>, Double> result = new HashMap<Pair<Integer>, Double>();
-		
-		for(Entry<Pair<Integer>, Integer> entry: similarities.entrySet()) {
+		for(Entry<Pair<Integer>, Double> entry: similarities.entrySet()) {
 			double nbOccurrences = entry.getValue();
 			Pair<Integer> documentIndices = entry.getKey();
-			int size0 = documents.get(documentIndices.get(0)).size();
-			int size1 = documents.get(documentIndices.get(1)).size();
-			double similarity = nbOccurrences / (size0 + size1 - nbOccurrences);
-			result.put(documentIndices, similarity);
+			int size0 = documents.get(documentIndices.getValue1()).size();
+			int sizeFirst = 
+			result = nbOccurrences / ()
 		}
-		
-		return result;
 	}
 
 }
